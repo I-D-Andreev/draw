@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def draw_view(request, *args, **kwargs):
+    return render(request, 'mirror_draw/draw.html', {})
