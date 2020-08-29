@@ -14,9 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
-from mirror_draw.views import draw_view_home
+from mirror_draw.views import (draw_view_home,
+                               draw_view_mirror_draw,
+                               draw_view_other)
 
-# app_name = 'draw'
 urlpatterns = [
     path('', draw_view_home),
+    path('mirror_draw/', draw_view_mirror_draw),
+    path('other/', draw_view_other),
 ]
