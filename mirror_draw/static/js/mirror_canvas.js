@@ -4,11 +4,15 @@ class MirrorCanvas {
         this.context = this.canvas.getContext('2d');
         this.window = window
 
-        this.canvas.width = canvas_width_percent / 100 * this.window.innerWidth;
-        this.canvas.height = canvas_height_percent / 100 * this.window.innerHeight;
+        this.width = canvas_width_percent / 100 * this.window.innerWidth;
+        this.height = canvas_height_percent / 100 * this.window.innerHeight;
+        this.offsetleft = ((100 - canvas_width_percent) / 2) / 100 * this.window.innerWidth;
+        this.offsettop = ((100 - canvas_height_percent) / 2) / 100 * this.window.innerHeight;
 
-        this.canvas.style.left = ((100 - canvas_width_percent) / 2) / 100 * this.window.innerWidth + 'px';
-        this.canvas.style.top = ((100 - canvas_height_percent) / 2) / 100 * this.window.innerHeight + 'px';
+        this.canvas.width = this.width;
+        this.canvas.height = this.height;
+        this.canvas.style.left = this.offsetleft + 'px';
+        this.canvas.style.top = this.offsettop + 'px';
     }
 }
 
