@@ -26,9 +26,14 @@ class MirrorCanvas {
         return this.#y;
     }
 
+    get_coord(e){
+        return {x: e.clientX - this.offset_left, y: e.clientY - this.offset_top};
+    }
+
     update_draw_position(e){
-        this.#x = e.offsetX;
-        this.#y = e.offsetY;
+        var curr = this.get_coord(e);
+        this.#x = curr.x;
+        this.#y = curr.y;
     }
 
 
@@ -38,8 +43,8 @@ class MirrorCanvas {
         this.canvas.style.left = this.offset_left + 'px';
         this.canvas.style.top = this.offset_top + 'px';
 
-        this.canvas.addEventListener('mousedown', this.#start_draw.bind(this));
-        this.canvas.addEventListener('mousemove', this.#draw.bind(this));
+        this.window.addEventListener('mousedown', this.#start_draw.bind(this));
+        this.window.addEventListener('mousemove', this.#draw.bind(this));
 
         // drawing may end out of canvas
         this.window.addEventListener('mouseup', this.#stop_draw.bind(this));
@@ -58,14 +63,16 @@ class MirrorCanvas {
 
     #draw(e) {
         if (this.currently_drawing) {
-            this.#paint(this.x, this.y, e.offsetX, e.offsetY);
+            var curr = this.get_coord(e);
+            this.#paint(this.x, this.y, curr.x, curr.y);
             this.update_draw_position(e);
         }
     }
 
     #stop_draw(e) {
         if (this.currently_drawing) {
-            this.#paint(this.x, this.y, e.clientX - this.offset_left, e.clientY - this.offset_top);
+            var curr = this.get_coord(e);
+            this.#paint(this.x, this.y, curr.x, curr.y);
             this.currently_drawing = false;
         }
     }
