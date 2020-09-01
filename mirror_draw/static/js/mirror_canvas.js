@@ -43,7 +43,6 @@ class MirrorCanvas {
 
         // drawing may end out of canvas
         this.window.addEventListener('mouseup', this.#stop_draw.bind(this));
-       
     }
 
     #init_brush() {
@@ -66,7 +65,7 @@ class MirrorCanvas {
 
     #stop_draw(e) {
         if (this.currently_drawing) {
-            this.#paint(this.x, this.y, e.offsetX - this.offset_left, e.offsetY - this.offset_top);
+            this.#paint(this.x, this.y, e.clientX - this.offset_left, e.clientY - this.offset_top);
             this.currently_drawing = false;
         }
     }
