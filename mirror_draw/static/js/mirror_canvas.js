@@ -1,4 +1,4 @@
-class SizedCanvas {
+class MirrorCanvas {
     constructor(canvas, window, canvas_width_percent = 80, canvas_height_percent = 80) {
         this.canvas = canvas
         this.context = this.canvas.getContext('2d');
@@ -12,4 +12,4 @@ class SizedCanvas {
     }
 }
 
-export { SizedCanvas };
+export { MirrorCanvas };

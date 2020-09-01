@@ -1,5 +1,5 @@
-import { SizedCanvas } from './sized_canvas.js'
+import { MirrorCanvas } from './mirror_canvas.js'
 window.addEventListener('load', ()=> {
     var cel = document.getElementById('md_canvas');
-    var canvas = new SizedCanvas(cel, window); // ??? maybe redo canvas on window size change
+    var canvas = new MirrorCanvas(cel, window); // ??? maybe redo canvas on window size change
 })
