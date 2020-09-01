@@ -27,7 +27,7 @@ class MirrorCanvas {
     }
 
     get_coord(e){
-        return {x: e.clientX - this.offset_left, y: e.clientY - this.offset_top};
+        return {x: e.pageX - this.offset_left, y: e.pageY - this.offset_top};
     }
 
     update_draw_position(e){
