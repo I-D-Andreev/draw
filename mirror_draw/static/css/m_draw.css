@@ -8,7 +8,7 @@
 
 .horizontal_line {
     /* width and position should be set in code */
-    border-top: 6px dotted black;
+    border-top: 2px dashed black;
     position: absolute;
     height: 0px;
 }
@@ -16,7 +16,7 @@
 
 .vertical_line {
     /* height and position should be set in code */
-    border-left: 6px dotted black;
+    border-left: 2px dashed black;
     width: 0px;
     position: absolute;
 }
