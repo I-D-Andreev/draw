@@ -7,13 +7,16 @@
 }
 
 .horizontal_line {
-    /* width, height and position should be set in code */
+    /* width and position should be set in code */
     border-top: 6px dotted black;
     position: absolute;
+    height: 0px;
 }
 
 
 .vertical_line {
-    /* width, height and position should be set in code */
-    display: none;
+    /* height and position should be set in code */
+    border-left: 6px dotted black;
+    width: 0px;
+    position: absolute;
 }

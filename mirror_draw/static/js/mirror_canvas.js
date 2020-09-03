@@ -29,11 +29,11 @@ class MirrorCanvas {
         return this.#y;
     }
 
-    get_coord(e){
-        return {x: e.pageX - this.offset_left, y: e.pageY - this.offset_top};
+    get_coord(e) {
+        return { x: e.pageX - this.offset_left, y: e.pageY - this.offset_top };
     }
 
-    update_draw_position(e){
+    update_draw_position(e) {
         var curr = this.get_coord(e);
         this.#x = curr.x;
         this.#y = curr.y;
@@ -60,10 +60,15 @@ class MirrorCanvas {
     }
 
     #init_mirror_lines() {
-        this.horizontal_line.style.top = this.window.innerHeight / 2 + "px";
-        this.horizontal_line.style.left = this.offset_left + "px";
-        this.horizontal_line.style.width = this.canvas_width + "px";
-        
+        var canvas_border_size = parseInt(getComputedStyle(this.canvas).borderWidth.replace('px', ''))
+
+        this.horizontal_line.style.top = this.window.innerHeight / 2 + 'px';
+        this.horizontal_line.style.left = this.offset_left + 'px';
+        this.horizontal_line.style.width = (this.canvas_width + 2 * canvas_border_size) + 'px';
+
+        this.vertical_line.style.top = this.offset_top + canvas_border_size + 'px';
+        this.vertical_line.style.left = this.window.innerWidth / 2 + 'px';
+        this.vertical_line.style.height = (this.canvas_height + 2 * canvas_border_size) + 'px';
     }
 
     #start_draw(e) {
