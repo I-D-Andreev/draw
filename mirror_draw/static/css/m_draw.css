@@ -1,7 +1,19 @@
 .canv {
-    /* width and height should be set in code */
+    /* width, height and position should be set in code */
     position: relative;
     border: 1px solid black;
     background-color: white;
     
+}
+
+.horizontal_line {
+    /* width, height and position should be set in code */
+    border-top: 6px dotted black;
+    position: absolute;
+}
+
+
+.vertical_line {
+    /* width, height and position should be set in code */
+    display: none;
 }

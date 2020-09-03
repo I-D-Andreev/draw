@@ -2,19 +2,22 @@ class MirrorCanvas {
     #x = 0
     #y = 0
 
-    constructor(canvas, window, canvas_width_percent = 80, canvas_height_percent = 80) {
+    constructor(canvas, hor_line, ver_line, window, canvas_width_percent = 80, canvas_height_percent = 80) {
         this.canvas = canvas
+        this.horizontal_line = hor_line
+        this.vertical_line = ver_line
         this.context = this.canvas.getContext('2d');
         this.window = window
 
         this.currently_drawing = false;
 
-        this.width = canvas_width_percent / 100 * this.window.innerWidth;
-        this.height = canvas_height_percent / 100 * this.window.innerHeight;
+        this.canvas_width = canvas_width_percent / 100 * this.window.innerWidth;
+        this.canvas_height = canvas_height_percent / 100 * this.window.innerHeight;
         this.offset_left = ((100 - canvas_width_percent) / 2) / 100 * this.window.innerWidth;
         this.offset_top = ((100 - canvas_height_percent) / 2) / 100 * this.window.innerHeight;
 
         this.#init_canvas();
+        this.#init_mirror_lines();
     }
 
     get x() {
@@ -38,8 +41,8 @@ class MirrorCanvas {
 
 
     #init_canvas() {
-        this.canvas.width = this.width;
-        this.canvas.height = this.height;
+        this.canvas.width = this.canvas_width;
+        this.canvas.height = this.canvas_height;
         this.canvas.style.left = this.offset_left + 'px';
         this.canvas.style.top = this.offset_top + 'px';
 
@@ -54,6 +57,13 @@ class MirrorCanvas {
         // get from a selector box ?
         this.context.lineWidth = 5;
         this.context.strokeStyle = 'green';
+    }
+
+    #init_mirror_lines() {
+        this.horizontal_line.style.top = this.window.innerHeight / 2 + "px";
+        this.horizontal_line.style.left = this.offset_left + "px";
+        this.horizontal_line.style.width = this.canvas_width + "px";
+        
     }
 
     #start_draw(e) {
