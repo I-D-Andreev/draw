@@ -88,7 +88,7 @@ class MirrorCanvas {
     #draw(e) {
         if (this.currently_drawing) {
             var curr = this.get_coord(e);
-            this.#paint(this.x, this.y, curr.x, curr.y);
+            this.#mirror_paint(this.x, this.y, curr.x, curr.y);
             this.update_draw_position(e);
         }
     }
@@ -96,12 +96,12 @@ class MirrorCanvas {
     #stop_draw(e) {
         if (this.currently_drawing) {
             var curr = this.get_coord(e);
-            this.#paint(this.x, this.y, curr.x, curr.y);
+            this.#mirror_paint(this.x, this.y, curr.x, curr.y);
             this.currently_drawing = false;
         }
     }
 
-    #paint(x1, y1, x2, y2) {
+    #mirror_paint(x1, y1, x2, y2) {
         this.context.beginPath();
         this.#init_brush();
         
