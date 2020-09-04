@@ -104,8 +104,30 @@ class MirrorCanvas {
     #paint(x1, y1, x2, y2) {
         this.context.beginPath();
         this.#init_brush();
+        
         this.context.moveTo(x1, y1);
         this.context.lineTo(x2, y2);
+
+        var x_axis = this.x_axis_pos - this.offset_top;
+        var y_axis = this.y_axis_pos - this.offset_left;
+
+        if(this.x_axis_on){
+            this.context.moveTo(x1, x_axis + (x_axis - y1));
+            this.context.lineTo(x2, x_axis + (x_axis - y2));
+        }
+
+
+        if(this.y_axis_on){
+            this.context.moveTo(y_axis + (y_axis - x1), y1);
+            this.context.lineTo(y_axis + (y_axis - x2), y2);
+        }
+
+        
+        if(this.x_axis_on && this.y_axis_on){
+            this.context.moveTo(y_axis + (y_axis - x1), x_axis + (x_axis - y1));
+            this.context.lineTo(y_axis + (y_axis - x2), x_axis + (x_axis - y2));
+        }
+
         this.context.stroke();
         this.context.closePath();
     }
