@@ -19,8 +19,8 @@ class MirrorCanvas {
         this.x_axis_pos = this.window.innerHeight / 2;
         this.y_axis_pos = this.window.innerWidth / 2;
 
-        this.x_axis_on = false;        
-        this.y_axis_on = false;        
+        this.x_axis_on = true;        
+        this.y_axis_on = true;        
 
         this.#init_canvas();
         this.#init_mirror_lines();
@@ -75,9 +75,6 @@ class MirrorCanvas {
         this.vertical_line.style.top = this.offset_top + canvas_border_size + 'px';
         this.vertical_line.style.left = this.y_axis_pos + 'px';
         this.vertical_line.style.height = (this.canvas_height + 2 * canvas_border_size) + 'px';
-        
-        this.x_axis_on = true;
-        this.y_axis_on = true;
     }
 
     #start_draw(e) {
