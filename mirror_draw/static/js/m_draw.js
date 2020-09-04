@@ -4,5 +4,7 @@ window.addEventListener('load', ()=> {
     var hl = document.getElementById('horizontal_line');
     var vl = document.getElementById('vertical_line');
 
-    var canvas = new MirrorCanvas(canvas_element, hl, vl, window);
+    var hb = document.getElementById('horizontal_button');
+    var vb = document.getElementById('vertical_button');
+    var canvas = new MirrorCanvas(canvas_element, hl, vl, hb, vb, window);
   })
