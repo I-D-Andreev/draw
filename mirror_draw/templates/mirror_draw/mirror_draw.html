@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Mirror Draw</title>
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/m_draw.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/m_draw.css' %}" />
     <script type="module" src="{% static 'js/m_draw.js' %}"></script>
 
 </head>
@@ -15,6 +16,11 @@
     <button id="horizontal_button" class="line_button">Enable/Disable Line</button>
     <button id="vertical_button" class="line_button">Enable/Disable Line</button>
     <button id="save_button">Save</button>
+
+    {% csrf_token %}
+    <script>
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+    </script>
 </body>
 
 </html>

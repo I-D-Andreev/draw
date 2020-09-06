@@ -3,32 +3,42 @@ class CanvasSaver {
         this.canvas = mirror_canvas;
         this.save_button = save_button;
         this.save_button.addEventListener('click', this.save_image.bind(this));
+
+        this.res = null;
     }
 
-    save_image(){
+    save_image() {
         this.#send_to_db();
     }
 
     #send_to_db() {
-        var xh = new XMLHttpRequest();
-        
-        xh.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-            // alert('Success');  
-            console.log('Success');
-          }
-          else {
-            //   alert('Error');
-            console.log('Error');
-          }
-        };
+        var req = new Request('/draw/mirror_draw/save',
+            {
+                headers: { 'X-CSRFToken': csrftoken }
+            });
 
-        xh.open("PUT", "save", true);
-        xh.send();
+        // fetch(req, {
+        //     method: 'post',
+        //     mode: 'same-origin',
+        //     body: 'hi'
+        // }).then(r => console.log(r));
+        fetch(req, {
+            method: 'post',
+            mode: 'same-origin',
+            type: 'plain/text',
+            body: 'hi'
+        }).then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+                console.error('Error:', error);
+        });
+
     }
-
-
 
 }
 
 export { CanvasSaver };
+
+

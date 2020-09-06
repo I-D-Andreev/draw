@@ -1,3 +1,5 @@
 from django.db import models
 
-# Create your models here.
+
+class Drawing(models.Model):
+    string_image = models.TextField()

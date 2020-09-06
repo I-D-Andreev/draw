@@ -16,10 +16,12 @@ Including another URLconf
 from django.urls import path
 from mirror_draw.views import (draw_view_home,
                                draw_view_mirror_draw,
+                               draw_view_save_image,
                                draw_view_other)
 
 urlpatterns = [
     path('', draw_view_home),
     path('mirror_draw/', draw_view_mirror_draw),
+    path('mirror_draw/save', draw_view_save_image),
     path('other/', draw_view_other),
 ]
