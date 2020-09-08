@@ -138,7 +138,6 @@ class MirrorCanvas {
             this.context.lineTo(y_axis + (y_axis - x2), y2);
         }
 
-
         if (this.horizontal_line_on && this.vertical_line_on) {
             this.context.moveTo(y_axis + (y_axis - x1), x_axis + (x_axis - y1));
             this.context.lineTo(y_axis + (y_axis - x2), x_axis + (x_axis - y2));
@@ -159,6 +158,11 @@ class MirrorCanvas {
         // '' - show line, 'none' - dont show line
         this.vertical_line.style.display = !this.vertical_line.style.display ? 'none' : '';
     }
+
+    encode_canvas() {
+        return this.canvas.toDataURL();
+    }
+
 }
 
 export { MirrorCanvas };
