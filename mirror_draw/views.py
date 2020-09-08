@@ -18,12 +18,16 @@ def draw_view_other(request, *args, **kwargs):
     return render(request, 'mirror_draw/other.html', {})
 
 
+def draw_view_find_image(request, *args, **kwargs):
+    return render(request, 'mirror_draw/find.html', {})
+
+
 def draw_view_save_image(request, *args, **kwargs):
     body = json.loads(request.body.decode('utf-8'))
     if request.method == 'POST':
         drawing = Drawing(string_image=body.get('data'))
         drawing.save()
-        return JsonResponse(SaveImageResponse(drawing.id, True, 'POST').as_dict())
+        return JsonResponse(SaveImageResponse(drawing.id, True).as_dict())
 
     if request.method == 'PUT':
         try:
@@ -31,7 +35,7 @@ def draw_view_save_image(request, *args, **kwargs):
             drawing = Drawing.objects.get(id=draw_id)
             drawing.string_image = body.get('data')
             drawing.save()
-            return JsonResponse(SaveImageResponse(draw_id, True, 'PUT').as_dict())
+            return JsonResponse(SaveImageResponse(draw_id, True).as_dict())
         except ObjectDoesNotExist:
             return JsonResponse(SaveImageResponse(draw_id, False, 'Drawing with such an ID does not exist').as_dict())
         except ValueError:

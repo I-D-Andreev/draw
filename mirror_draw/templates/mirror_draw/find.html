@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Find Drawing</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/find.css' %}" />
+    <script type="module" src="{% static 'js/find.js' %}"></script>
+
+</head>
+
+<body>
+    <div>
+        <input type="text" id="id_textbox">
+        <button id="id_button">Search</button>
+    </div>
+    <img id="drawing">
+
+
+    {% csrf_token %}
+    <script>
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+    </script>
+</body>
+
+</html>
