@@ -1,14 +1,9 @@
 class DrawingLoader {
-    constructor(id_box, id_button, img) {
-        this.id_box = id_box;
-        this.id_button = id_button;
+    constructor(img) {
         this.img = img;
-
-        this.id_button.addEventListener('click', this.#load_drawing.bind(this));
     }
 
-    #load_drawing() {
-        var drawing_id = this.id_box.value;
+    load_drawing(drawing_id) {
         if (drawing_id.length > 0 && !isNaN(drawing_id)) {
             this.#query_database(drawing_id);
         }
