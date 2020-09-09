@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.db.models import ObjectDoesNotExist
+import json
+
 from .models import Drawing
 from .save_image_response import SaveImageResponse
-import json
+from .get_image_response import GetImageResponse
 
 
 def draw_view_home(request, *args, **kwargs):
@@ -20,6 +22,20 @@ def draw_view_other(request, *args, **kwargs):
 
 def draw_view_find_image(request, *args, **kwargs):
     return render(request, 'mirror_draw/find.html', {})
+
+
+def draw_view_query_image(request, drawing_id, *args, **kwargs):
+    if request.method == 'GET':
+        try:
+            drawing = Drawing.objects.get(id=drawing_id)
+            return JsonResponse(GetImageResponse(drawing_id, True, data=drawing.string_image).as_dict())
+        except ObjectDoesNotExist:
+            return JsonResponse(
+                GetImageResponse(drawing_id, False, reason='Drawing with such an ID does not exist').as_dict())
+        except ValueError:
+            return JsonResponse(GetImageResponse(drawing_id, False, reason='Drawing ID should be a number').as_dict())
+        except:
+            return JsonResponse(GetImageResponse(drawing_id, False, reason='Unknown error has occurred').as_dict())
 
 
 def draw_view_save_image(request, *args, **kwargs):

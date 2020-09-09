@@ -18,6 +18,7 @@ from mirror_draw.views import (draw_view_home,
                                draw_view_mirror_draw,
                                draw_view_save_image,
                                draw_view_find_image,
+                               draw_view_query_image,
                                draw_view_other)
 
 urlpatterns = [
@@ -25,5 +26,6 @@ urlpatterns = [
     path('mirror_draw/', draw_view_mirror_draw),
     path('mirror_draw/save', draw_view_save_image),
     path('find', draw_view_find_image),
+    path('find/<int:drawing_id>', draw_view_query_image),
     path('other/', draw_view_other),
 ]

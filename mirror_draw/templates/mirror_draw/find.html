@@ -11,10 +11,10 @@
 
 <body>
     <div>
-        <input type="text" id="id_textbox">
+        <input id="id_textbox" type="number" min="1" step="1" value="1" oninput="validity.valid||(value='');">
         <button id="id_button">Search</button>
     </div>
-    <img id="drawing">
+    <img id="drawing" class="img">
 
 
     {% csrf_token %}
