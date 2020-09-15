@@ -10,6 +10,7 @@ class MirrorCanvas {
         this.vertical_button = ver_button
         this.context = this.canvas.getContext('2d');
         this.window = window
+        this.is_saved = false; // is the latest drawing saved
 
         this.currently_drawing = false;
 
@@ -122,6 +123,8 @@ class MirrorCanvas {
     }
 
     #mirror_paint(x1, y1, x2, y2) {
+        this.is_saved = false;
+
         this.context.beginPath();
         this.#init_brush();
 

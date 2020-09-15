@@ -10,16 +10,19 @@ class CanvasSaver {
     }
 
     download_image(){
-        console.log(this.id);
+        if (!this.mirror_canvas.is_saved){
+            this.save_image();
+        }
+
+        var drawing_name = 'my_drawing.png';
         // IE
         if(window.navigator.msSaveBlob){
-            window.navigator.msSaveBlob(this.mirror_canvas.canvas.msToBlob(), (this.id + '.png'))
+            window.navigator.msSaveBlob(this.mirror_canvas.canvas.msToBlob(), drawing_name);
         } else {
-            console.log('Here');
             const a = document.createElement('a');
             document.body.appendChild(a);
             a.href = this.mirror_canvas.encode_canvas();
-            a.download = (this.id + '.png');
+            a.download = drawing_name;
             a.click();
             document.body.removeChild(a);
         }
@@ -61,6 +64,7 @@ class CanvasSaver {
 
                 if (data.success === true) {
                     this.id = this.id ? this.id : data.id;
+                    this.mirror_canvas.is_saved = true;
                     console.log(this.id);
                 } else {
                     console.log('Response Error:', data.reason);
