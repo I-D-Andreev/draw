@@ -29,6 +29,7 @@ class DrawingLoader {
                     this.img.src = data.data;
                 } else {
                     console.log('Response Error:', data.reason);
+                    alert(data.reason);
                 }
             })
             .catch((error) => {
