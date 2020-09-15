@@ -1,9 +1,31 @@
 class CanvasSaver {
-    constructor(mirror_canvas, save_button) {
+    constructor(mirror_canvas, save_button, download_button) {
         this.mirror_canvas = mirror_canvas;
         this.save_button = save_button;
+        this.download_button = download_button;
+
         this.save_button.addEventListener('click', this.save_image.bind(this));
+        this.download_button.addEventListener('click', this.download_image.bind(this));
         this.id = null;
+    }
+
+    download_image(){
+        console.log(this.id);
+        // IE
+        if(window.navigator.msSaveBlob){
+            window.navigator.msSaveBlob(this.mirror_canvas.canvas.msToBlob(), (this.id + '.png'))
+        } else {
+            console.log('Here');
+            const a = document.createElement('a');
+            document.body.appendChild(a);
+            a.href = this.mirror_canvas.encode_canvas();
+            a.download = (this.id + '.png');
+            a.click();
+            document.body.removeChild(a);
+        }
+        
+
+
     }
 
     save_image() {

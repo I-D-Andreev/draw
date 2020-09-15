@@ -10,5 +10,6 @@ window.addEventListener('load', () => {
   var canvas = new MirrorCanvas(canvas_element, horizontal_line, vertical_line, horizontal_button, vertical_button, window);
 
   var save_button = document.getElementById('save_button');
-  var canvas_saver = new CanvasSaver(canvas, save_button);
+  var download_button = document.getElementById('download_button');
+  var canvas_saver = new CanvasSaver(canvas, save_button, download_button);
 })
