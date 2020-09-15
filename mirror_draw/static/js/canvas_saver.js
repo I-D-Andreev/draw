@@ -1,3 +1,4 @@
+import { DrawingDownloader } from './drawing_downloader.js'
 class CanvasSaver {
     constructor(mirror_canvas, save_button, download_button) {
         this.mirror_canvas = mirror_canvas;
@@ -14,21 +15,7 @@ class CanvasSaver {
             this.save_image();
         }
 
-        var drawing_name = 'my_drawing.png';
-        // IE
-        if(window.navigator.msSaveBlob){
-            window.navigator.msSaveBlob(this.mirror_canvas.canvas.msToBlob(), drawing_name);
-        } else {
-            const a = document.createElement('a');
-            document.body.appendChild(a);
-            a.href = this.mirror_canvas.encode_canvas();
-            a.download = drawing_name;
-            a.click();
-            document.body.removeChild(a);
-        }
-        
-
-
+        DrawingDownloader.download(this.mirror_canvas.encode_canvas());
     }
 
     save_image() {

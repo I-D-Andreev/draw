@@ -23,9 +23,7 @@ class DrawingLoader {
                 console.log('Received:', data);
 
                 if (data.success === true) {
-                    console.log('Here');
-                    console.log('Data' + data.data);
-                    console.log(this);
+                    console.log('Successful load!');
                     this.img.src = data.data;
                 } else {
                     console.log('Response Error:', data.reason);
