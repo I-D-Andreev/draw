@@ -55,6 +55,10 @@ class MirrorCanvas {
         this.canvas.style.left = this.offset_left + 'px';
         this.canvas.style.top = this.offset_top + 'px';
 
+        // fill with white colour
+        this.context.fillStyle = 'white';
+        this.context.fillRect(0,0, this.canvas_width, this.canvas_height);
+
         this.window.addEventListener('mousedown', this.#start_draw.bind(this));
         this.window.addEventListener('mousemove', this.#draw.bind(this));
 
