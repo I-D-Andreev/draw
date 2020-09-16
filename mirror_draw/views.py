@@ -13,7 +13,12 @@ def draw_view_home(request, *args, **kwargs):
 
 
 def draw_view_mirror_draw(request, *args, **kwargs):
-    return render(request, 'mirror_draw/mirror_draw.html', {})
+    # if draw_id is None or empty string, the variable does not get populated on the template
+    draw_id = -1
+    if request.GET:
+        draw_id = request.GET.get('id', '')
+
+    return render(request, 'mirror_draw/mirror_draw.html', {'draw_id': draw_id})
 
 
 def draw_view_other(request, *args, **kwargs):

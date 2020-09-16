@@ -1,5 +1,7 @@
 import { MirrorCanvas } from './mirror_canvas.js'
 import { CanvasSaver } from './canvas_saver.js'
+import { DrawingLoader } from './drawing_loader.js'
+
 window.addEventListener('load', () => {
   var canvas_element = document.getElementById('md_canvas');
   var horizontal_line = document.getElementById('horizontal_line');
@@ -12,4 +14,11 @@ window.addEventListener('load', () => {
   var save_button = document.getElementById('save_button');
   var download_button = document.getElementById('download_button');
   var canvas_saver = new CanvasSaver(canvas, save_button, download_button);
-})
+
+  var canvas_loader = null;
+  if(drawing_id > 0){
+    canvas_loader = new DrawingLoader(canvas_element);
+    canvas_loader.load_canvas(drawing_id);
+  }
+
+});

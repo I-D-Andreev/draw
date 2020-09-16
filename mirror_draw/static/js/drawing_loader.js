@@ -6,7 +6,7 @@ const LOAD_TYPE = {
 class DrawingLoader {
     constructor(img_element) { // either html img or html canvas
         this.img = img_element;
-        this.current_id = null;
+        this.current_id = null; // the ID of the currently loaded image
     }
 
     load_image(drawing_id) {
@@ -16,7 +16,7 @@ class DrawingLoader {
     }
 
     load_canvas(drawing_id) {
-        if (drawing_id.length > 0 && !isNaN(drawing_id)) {
+        if (String(drawing_id).length > 0 && !isNaN(drawing_id)) {
             this.#query_database(drawing_id, LOAD_TYPE.CANVAS);
         }
     }
@@ -44,7 +44,9 @@ class DrawingLoader {
                         var ctx = this.img.getContext('2d');
                         var temp_img = new Image;
                         temp_img.addEventListener('load', () => {
-                             ctx.drawImage(temp_img, 0, 0); 
+                            ctx.drawImage(temp_img,
+                                0, 0, temp_img.width, temp_img.height,
+                                0, 0, this.img.width, this.img.height);
                         });
                         temp_img.src = data.data;
                     }
