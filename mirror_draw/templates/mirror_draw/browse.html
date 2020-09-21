@@ -14,28 +14,31 @@
     <div class="centered_div grid_container centered_text">
         <div class="grid_item">
             <label>Identification number:</label>
-            <label id="id_label_1">0</label>
+            <label id="id_label_1">None</label>
             <img id="drawing_1" class="img_div">
         </div>
 
         <div class="grid_item">
             <label>Identification number:</label>
-            <label id="id_label_2">0</label>
+            <label id="id_label_2">None</label>
             <img id="drawing_2" class="img_div">
         </div>
 
         <div class="grid_item">
             <label>Identification number:</label>
-            <label id="id_label_3">0</label>
+            <label id="id_label_3">None</label>
             <img id="drawing_3" class="img_div">
         </div>
 
         <div class="grid_item">
             <label>Identification number:</label>
-            <label id="id_label_4">0</label>
+            <label id="id_label_4">None</label>
             <img id="drawing_4" class="img_div">
         </div>
     </div>
+    <button id="next_button" class="vertical_align">Next</button>
+    <button id="prev_button" class="vertical_align">Previous</button>
+
     {% csrf_token %}
     <script>
         const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
