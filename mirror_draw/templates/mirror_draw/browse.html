@@ -10,7 +10,13 @@
 </head>
 
 <body>
-
+    <h1 class="centered_text"> Browse Drawings </h1>
+    <div class="centered_div grid_container">
+        <img id="drawing_1" class="grid_item">
+        <img id="drawing_2" class="grid_item">
+        <img id="drawing_3" class="grid_item">
+        <img id="drawing_4" class="grid_item">
+    </div>
     {% csrf_token %}
     <script>
         const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
