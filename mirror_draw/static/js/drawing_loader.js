@@ -36,9 +36,9 @@ class DrawingLoader {
 
                 if (data.success === true) {
                     console.log('Successful load! Type: ' + type);
+                    this.current_id = drawing_id;
                     if (type === LOAD_TYPE.IMAGE) {
                         this.img.src = data.data;
-                        this.current_id = drawing_id;
                     } else if (type === LOAD_TYPE.CANVAS) {
                         //draw on a canvas
                         var ctx = this.img.getContext('2d');
