@@ -42,6 +42,7 @@
     {% csrf_token %}
     <script>
         const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+        const num_drawings = {{num_drawings}};
     </script>
 </body>
 

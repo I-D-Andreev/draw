@@ -22,7 +22,8 @@ def draw_view_mirror_draw(request, *args, **kwargs):
 
 
 def draw_view_browse(request, *args, **kwargs):
-    return render(request, 'mirror_draw/browse.html', {})
+    num_drawings = Drawing.objects.count()
+    return render(request, 'mirror_draw/browse.html', {'num_drawings': num_drawings})
 
 
 def draw_view_other(request, *args, **kwargs):
