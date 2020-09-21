@@ -21,6 +21,10 @@ def draw_view_mirror_draw(request, *args, **kwargs):
     return render(request, 'mirror_draw/mirror_draw.html', {'draw_id': draw_id})
 
 
+def draw_view_browse(request, *args, **kwargs):
+    return render(request, 'mirror_draw/browse.html', {})
+
+
 def draw_view_other(request, *args, **kwargs):
     return render(request, 'mirror_draw/other.html', {})
 
