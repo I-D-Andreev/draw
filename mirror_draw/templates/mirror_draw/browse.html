@@ -11,11 +11,30 @@
 
 <body>
     <h1 class="centered_text"> Browse Drawings </h1>
-    <div class="centered_div grid_container">
-        <img id="drawing_1" class="grid_item">
-        <img id="drawing_2" class="grid_item">
-        <img id="drawing_3" class="grid_item">
-        <img id="drawing_4" class="grid_item">
+    <div class="centered_div grid_container centered_text">
+        <div class="grid_item">
+            <label>Identification number:</label>
+            <label id="id_label_1">0</label>
+            <img id="drawing_1" class="img_div">
+        </div>
+
+        <div class="grid_item">
+            <label>Identification number:</label>
+            <label id="id_label_2">0</label>
+            <img id="drawing_2" class="img_div">
+        </div>
+
+        <div class="grid_item">
+            <label>Identification number:</label>
+            <label id="id_label_3">0</label>
+            <img id="drawing_3" class="img_div">
+        </div>
+
+        <div class="grid_item">
+            <label>Identification number:</label>
+            <label id="id_label_4">0</label>
+            <img id="drawing_4" class="img_div">
+        </div>
     </div>
     {% csrf_token %}
     <script>

@@ -2,6 +2,7 @@
     text-align: center;
 }
 
+
 .centered_div {
     border: 2px solid black;
     position: absolute;
@@ -29,7 +30,14 @@
 
 .grid_item {
     background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    border: 2px solid red;
+
+    height: 95%;
+    width: 95%;
+}
+
+.img_div {
+    border: 2px solid orange;
 
     height: 90%;
     width: 90%;
