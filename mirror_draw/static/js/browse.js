@@ -45,5 +45,5 @@ window.addEventListener('load', () => {
     });
 
 
-    // next_button.click();
+    next_button.click();
 });
