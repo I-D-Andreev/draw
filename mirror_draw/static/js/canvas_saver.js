@@ -1,9 +1,10 @@
 import { DrawingDownloader } from './drawing_downloader.js'
 class CanvasSaver {
-    constructor(mirror_canvas, save_button, download_button) {
+    constructor(mirror_canvas, save_button, download_button, id_display) {
         this.mirror_canvas = mirror_canvas;
         this.save_button = save_button;
         this.download_button = download_button;
+        this.id_display_field = id_display;
 
         this.save_button.addEventListener('click', this.save_image.bind(this));
         this.download_button.addEventListener('click', this.download_image.bind(this));
@@ -52,7 +53,7 @@ class CanvasSaver {
                 if (data.success === true) {
                     this.id = this.id ? this.id : data.id;
                     this.mirror_canvas.is_saved = true;
-                    console.log(this.id);
+                    this.id_display_field.innerHTML = this.id;
                 } else {
                     console.log('Response Error:', data.reason);
                 }

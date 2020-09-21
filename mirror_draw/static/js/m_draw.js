@@ -13,7 +13,8 @@ window.addEventListener('load', () => {
 
   var save_button = document.getElementById('save_button');
   var download_button = document.getElementById('download_button');
-  var canvas_saver = new CanvasSaver(canvas, save_button, download_button);
+  var id_display = document.getElementById('id_display');
+  var canvas_saver = new CanvasSaver(canvas, save_button, download_button, id_display);
 
   var canvas_loader = null;
   if(drawing_id > 0){
