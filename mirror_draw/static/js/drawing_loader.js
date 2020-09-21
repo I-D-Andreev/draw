@@ -10,7 +10,7 @@ class DrawingLoader {
     }
 
     load_image(drawing_id) {
-        if (drawing_id.length > 0 && !isNaN(drawing_id)) {
+        if (String(drawing_id).length > 0 && !isNaN(drawing_id)) {
             this.#query_database(drawing_id, LOAD_TYPE.IMAGE);
         }
     }
