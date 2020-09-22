@@ -22,7 +22,13 @@
 }
 
 .line_button {
-    /* background-color: green; */
     height: 25px;
     position: absolute;
+}
+
+#colour_picker, #show_id, #buttons {
+    /* border: 1px solid black; */
+    float:left;
+    position: relative;
+    margin-left: 5%;
 }
