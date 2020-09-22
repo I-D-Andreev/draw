@@ -1,14 +1,15 @@
 import { DrawingLoaderID } from './drawing_loader_with_ID.js'
 
 window.addEventListener('load', () => {
-    // numbers of drawings is saved into the num_drawings variable
+    // numbers of drawings is saved into the num_drawings letiable
 
     // pad 0th element so that array index matches html elements id
-    var loaders = [null];
-    var counter = 1;
-    var next_button = document.getElementById('next_button');
-    var prev_button = document.getElementById('prev_button');
-    var loaded_all = false; // whether we have loaded the last drawing in the DB
+    let loaders = [null];
+    let counter = 1;
+    let loaded_all = false; // whether we have loaded the last drawing in the DB
+
+    let next_button = document.getElementById('next_button');
+    let prev_button = document.getElementById('prev_button');
 
 
 
