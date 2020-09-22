@@ -22,7 +22,7 @@ class DrawingLoader {
     }
 
     #query_database(drawing_id, type) {
-        var req = new Request('/draw/find/' + drawing_id,
+        let req = new Request('/draw/find/' + drawing_id,
             {
                 headers: { 'X-CSRFToken': csrftoken }
             });
@@ -41,8 +41,8 @@ class DrawingLoader {
                         this.img.src = data.data;
                     } else if (type === LOAD_TYPE.CANVAS) {
                         //draw on a canvas
-                        var ctx = this.img.getContext('2d');
-                        var temp_img = new Image;
+                        let ctx = this.img.getContext('2d');
+                        let temp_img = new Image;
                         temp_img.addEventListener('load', () => {
                             ctx.drawImage(temp_img,
                                 0, 0, temp_img.width, temp_img.height,
