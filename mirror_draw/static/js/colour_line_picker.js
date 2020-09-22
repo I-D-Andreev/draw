@@ -10,7 +10,8 @@ class CoulourLinePicker {
     }
 
     #change_line_size(change){
-        this.line_size.innerHTML = parseInt(this.line_size.innerHTML) + change;
+        let new_val = parseInt(this.line_size.innerHTML) + change;
+        this.line_size.innerHTML = Math.max(1, new_val);
     }
 
     get_size(){

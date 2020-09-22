@@ -2,16 +2,18 @@ class MirrorCanvas {
     #x = 0
     #y = 0
 
-    constructor(canvas, hor_line, ver_line, hor_button, ver_button, window, canvas_width_percent = 80, canvas_height_percent = 80) {
-        this.canvas = canvas
-        this.horizontal_line = hor_line
-        this.vertical_line = ver_line
-        this.horizontal_button = hor_button
-        this.vertical_button = ver_button
-        this.context = this.canvas.getContext('2d');
+    constructor(canvas, hor_line, ver_line, hor_button, ver_button, colour_picker, window, canvas_width_percent = 80, canvas_height_percent = 80) {
+        this.canvas = canvas;
+        this.horizontal_line = hor_line;
+        this.vertical_line = ver_line;
+        this.horizontal_button = hor_button;
+        this.vertical_button = ver_button;
+        this.colour_picker = colour_picker;
         this.window = window
-        this.is_saved = false; // is the latest drawing saved
 
+
+        this.context = this.canvas.getContext('2d');
+        this.is_saved = false; // is the latest drawing saved
         this.currently_drawing = false;
 
         this.canvas_width = canvas_width_percent / 100 * this.window.innerWidth;
@@ -69,8 +71,8 @@ class MirrorCanvas {
 
     #init_brush() {
         // get from a selector box ?
-        this.context.lineWidth = 5;
-        this.context.strokeStyle = 'green';
+        this.context.lineWidth = this.colour_picker.get_size();
+        this.context.strokeStyle = this.colour_picker.get_colour();
     }
 
     #init_mirror_lines() {
