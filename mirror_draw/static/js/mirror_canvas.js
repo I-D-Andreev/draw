@@ -137,7 +137,13 @@ class MirrorCanvas {
         this.is_saved = false;
 
         this.context.beginPath();
-        this.#init_brush();
+        if(this.is_erasing){
+            this.context.globalCompositeOperation = 'destination-out';
+            this.context.lineWidth = 15;
+        } else {
+            this.#init_brush();
+            this.context.globalCompositeOperation = 'source-over';    
+        }
 
         this.context.moveTo(x1, y1);
         this.context.lineTo(x2, y2);
