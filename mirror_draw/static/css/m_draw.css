@@ -26,7 +26,7 @@
     position: absolute;
 }
 
-#colour_picker, #show_id, #buttons {
+#colour_picker_div, #show_id, #buttons {
     /* border: 1px solid black; */
     float:left;
     position: relative;
