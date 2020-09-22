@@ -2,16 +2,16 @@ import { DrawingLoader } from './drawing_loader.js'
 import { DrawingDownloader } from './drawing_downloader.js'
 
 window.addEventListener('load', () => {
-    var id_box = document.getElementById('id_textbox');
-    var id_button = document.getElementById('id_button');
-    var download_button = document.getElementById('download_button');
-    var draw_button = document.getElementById('draw_button');
+    let id_box = document.getElementById('id_textbox');
+    let id_button = document.getElementById('id_button');
+    let download_button = document.getElementById('download_button');
+    let draw_button = document.getElementById('draw_button');
 
     download_button.disabled = true;
 
-    var img = document.getElementById('drawing');
+    let img = document.getElementById('drawing');
 
-    var drawing_loader = new DrawingLoader(img);
+    let drawing_loader = new DrawingLoader(img);
 
     id_box.addEventListener('keydown', (e) => {
         if (e.key.toLowerCase().includes('enter')) {
@@ -20,7 +20,7 @@ window.addEventListener('load', () => {
     });
 
     id_button.addEventListener('click', () => {
-        var draw_id = id_box.value;
+        let draw_id = id_box.value;
         drawing_loader.load_image(draw_id);
     });
 
@@ -35,7 +35,7 @@ window.addEventListener('load', () => {
     });
 
     draw_button.addEventListener('click', () => {
-        var curr_id = drawing_loader.current_id;
+        let curr_id = drawing_loader.current_id;
         if (curr_id) {
             location.href = ('mirror_draw/?id=' + curr_id);
         }
