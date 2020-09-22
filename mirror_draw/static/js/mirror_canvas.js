@@ -109,6 +109,12 @@ class MirrorCanvas {
     #init_eraser(){
         this.eraser.addEventListener('click', ()=>{
             this.is_erasing = !this.is_erasing;
+
+            let cursor = this.is_erasing ? 'crosshair' : 'auto';
+            let color = this.is_erasing ? 'red' : 'lightseagreen';
+
+            document.getElementsByTagName('body')[0].style.cursor = cursor;
+            this.eraser.style.backgroundColor = color;
         });
     }
 

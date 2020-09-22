@@ -32,3 +32,13 @@
     position: relative;
     margin-left: 5%;
 }
+
+#eraser {
+    background-color: lightseagreen;
+    border: 0px;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
