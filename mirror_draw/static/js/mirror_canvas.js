@@ -44,7 +44,7 @@ class MirrorCanvas {
     }
 
     update_draw_position(e) {
-        var curr = this.get_coord(e);
+        let curr = this.get_coord(e);
         this.#x = curr.x;
         this.#y = curr.y;
     }
@@ -74,7 +74,7 @@ class MirrorCanvas {
     }
 
     #init_mirror_lines() {
-        var canvas_border_size = parseInt(getComputedStyle(this.canvas).borderWidth.replace('px', ''));
+        let canvas_border_size = parseInt(getComputedStyle(this.canvas).borderWidth.replace('px', ''));
 
         this.horizontal_line.style.top = this.horizontal_line_pos + 'px';
         this.horizontal_line.style.left = this.offset_left + 'px';
@@ -87,9 +87,9 @@ class MirrorCanvas {
 
     #init_line_buttons() {
         // both buttons should have the same size
-        var button_height = parseInt(getComputedStyle(this.horizontal_button).height.replace('px', ''));
-        var button_width = parseInt(getComputedStyle(this.horizontal_button).width.replace('px', ''));
-        var offset_from_canvas = 10; // pixels inbetween the canvas and the button
+        let button_height = parseInt(getComputedStyle(this.horizontal_button).height.replace('px', ''));
+        let button_width = parseInt(getComputedStyle(this.horizontal_button).width.replace('px', ''));
+        let offset_from_canvas = 10; // pixels inbetween the canvas and the button
 
         this.horizontal_button.style.left = this.offset_left + this.canvas_width + offset_from_canvas + 'px';
         this.horizontal_button.style.top = this.horizontal_line_pos - (button_height / 2) + 'px';
@@ -108,7 +108,7 @@ class MirrorCanvas {
 
     #draw(e) {
         if (this.currently_drawing) {
-            var curr = this.get_coord(e);
+            let curr = this.get_coord(e);
             this.#mirror_paint(this.x, this.y, curr.x, curr.y);
             this.update_draw_position(e);
         }
@@ -116,7 +116,7 @@ class MirrorCanvas {
 
     #stop_draw(e) {
         if (this.currently_drawing) {
-            var curr = this.get_coord(e);
+            let curr = this.get_coord(e);
             this.#mirror_paint(this.x, this.y, curr.x, curr.y);
             this.currently_drawing = false;
         }
@@ -131,8 +131,8 @@ class MirrorCanvas {
         this.context.moveTo(x1, y1);
         this.context.lineTo(x2, y2);
 
-        var x_axis = this.horizontal_line_pos - this.offset_top;
-        var y_axis = this.vertical_line_pos - this.offset_left;
+        let x_axis = this.horizontal_line_pos - this.offset_top;
+        let y_axis = this.vertical_line_pos - this.offset_left;
 
         if (this.horizontal_line_on) {
             this.context.moveTo(x1, x_axis + (x_axis - y1));

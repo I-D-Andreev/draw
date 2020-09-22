@@ -3,20 +3,20 @@ import { CanvasSaver } from './canvas_saver.js'
 import { DrawingLoader } from './drawing_loader.js'
 
 window.addEventListener('load', () => {
-  var canvas_element = document.getElementById('md_canvas');
-  var horizontal_line = document.getElementById('horizontal_line');
-  var vertical_line = document.getElementById('vertical_line');
+  let canvas_element = document.getElementById('md_canvas');
+  let horizontal_line = document.getElementById('horizontal_line');
+  let vertical_line = document.getElementById('vertical_line');
 
-  var horizontal_button = document.getElementById('horizontal_button');
-  var vertical_button = document.getElementById('vertical_button');
-  var canvas = new MirrorCanvas(canvas_element, horizontal_line, vertical_line, horizontal_button, vertical_button, window);
+  let horizontal_button = document.getElementById('horizontal_button');
+  let vertical_button = document.getElementById('vertical_button');
+  let canvas = new MirrorCanvas(canvas_element, horizontal_line, vertical_line, horizontal_button, vertical_button, window);
 
-  var save_button = document.getElementById('save_button');
-  var download_button = document.getElementById('download_button');
-  var id_display = document.getElementById('id_display');
-  var canvas_saver = new CanvasSaver(canvas, save_button, download_button, id_display);
+  let save_button = document.getElementById('save_button');
+  let download_button = document.getElementById('download_button');
+  let id_display = document.getElementById('id_display');
+  let canvas_saver = new CanvasSaver(canvas, save_button, download_button, id_display);
 
-  var canvas_loader = null;
+  let canvas_loader = null;
   if(drawing_id > 0){
     canvas_loader = new DrawingLoader(canvas_element);
     canvas_loader.load_canvas(drawing_id);
