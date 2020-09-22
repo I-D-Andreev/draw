@@ -20,8 +20,8 @@ class CanvasSaver {
     }
 
     save_image() {
-        var cdata = this.mirror_canvas.encode_canvas();
-        var body = {
+        let cdata = this.mirror_canvas.encode_canvas();
+        let body = {
             data: cdata
         }
 
@@ -34,9 +34,9 @@ class CanvasSaver {
     }
 
     #send_to_db(http_verb, body) {
-        var body_str = JSON.stringify(body);
+        let body_str = JSON.stringify(body);
 
-        var req = new Request('/draw/mirror_draw/save',
+        let req = new Request('/draw/mirror_draw/save',
             {
                 headers: { 'X-CSRFToken': csrftoken }
             });
