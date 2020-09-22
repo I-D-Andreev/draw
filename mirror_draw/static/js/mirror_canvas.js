@@ -2,19 +2,21 @@ class MirrorCanvas {
     #x = 0
     #y = 0
 
-    constructor(canvas, hor_line, ver_line, hor_button, ver_button, colour_picker, window, canvas_width_percent = 80, canvas_height_percent = 80) {
+    constructor(canvas, hor_line, ver_line, hor_button, ver_button, colour_picker, eraser_btn, window, canvas_width_percent = 80, canvas_height_percent = 80) {
         this.canvas = canvas;
         this.horizontal_line = hor_line;
         this.vertical_line = ver_line;
         this.horizontal_button = hor_button;
         this.vertical_button = ver_button;
         this.colour_picker = colour_picker;
+        this.eraser = eraser;
         this.window = window
 
 
         this.context = this.canvas.getContext('2d');
         this.is_saved = false; // is the latest drawing saved
         this.currently_drawing = false;
+        this.is_erasing = false;
 
         this.canvas_width = canvas_width_percent / 100 * this.window.innerWidth;
         this.canvas_height = canvas_height_percent / 100 * this.window.innerHeight;
@@ -30,6 +32,7 @@ class MirrorCanvas {
         this.#init_canvas();
         this.#init_mirror_lines();
         this.#init_line_buttons();
+        this.#init_eraser();
     }
 
     get x() {
@@ -101,6 +104,12 @@ class MirrorCanvas {
         
         this.horizontal_button.addEventListener('click', this.#enable_disable_hor_line.bind(this));
         this.vertical_button.addEventListener('click', this.#enable_disable_ver_line.bind(this));
+    }
+
+    #init_eraser(){
+        this.eraser.addEventListener('click', ()=>{
+            this.is_erasing = !this.is_erasing;
+        });
     }
 
     #start_draw(e) {
