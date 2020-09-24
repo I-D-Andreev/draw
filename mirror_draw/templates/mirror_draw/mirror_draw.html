@@ -7,14 +7,15 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/m_draw.css' %}" />
     <script type="module" src="{% static 'js/m_draw.js' %}"></script>
 
+    <script src="https://kit.fontawesome.com/5db994464b.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <canvas id="md_canvas" class="canv"></canvas>
     <div id="horizontal_line" class="horizontal_line"></div>
     <div id="vertical_line" class="vertical_line"></div>
-    <button id="horizontal_button" class="line_button">Enable/Disable Line</button>
-    <button id="vertical_button" class="line_button">Enable/Disable Line</button>
+    <button id="horizontal_button" class="line_button"><i class="fas fa-chevron-circle-left fa-2x"></i></button>
+    <button id="vertical_button" class="line_button"> <i class="fas fa-chevron-circle-down fa-2x"></i></button>
 
     <div id="header_div">
         <div id="id_div">
