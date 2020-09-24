@@ -41,12 +41,12 @@ html, body {
 
 
 #header_div {
-    width: 60%;
+    width: 80%;
     height: 7%;
 
-    margin-left: 20%;
+    margin-left: 10%;
     border-radius: 0px 0px 20px 20px;
-    background-color: rgb(86, 218, 114);
+    background-color: rgb(86, 218, 114)
 
 }
 
@@ -55,31 +55,26 @@ button {
 }
 
 #colour_picker_div, #id_div, #buttons {
-    background-color: orange;
-    width: 30%;
+    /* background-color: orange; */
+    width: 25%;
     height: 100%;
     float: left;
-    margin-left: 3%;
-    /* margin-left: 8%; */
+    margin-left: 2.5%;
 
     text-align: center;
+}
+#colour_picker_div {
+    width: 40%;
 }
 
 #id_display{
     height: 100%;
-    display: grid;
-    align-items: center;
-
     font-size: large; /* todo: change size and color */ 
 }
 
-#buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-#buttons button{
+
+#buttons button {
     height: 60%;
     /* todo: coloring etc*/
 } 
@@ -92,3 +87,32 @@ button {
     margin-left: 5%;
 }
 
+.center_buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center_text_span {
+    height: 100%;
+    display: grid;
+    align-items: center;
+}
+
+#colour_picker_div * {
+    height: 50%;
+    width: 8%;
+}
+
+#colour_picker, #eraser {
+    margin-left: 5%;
+    width: 12%;
+}
+
+#eraser {
+    font-size: 1.2em;
+}
+
+#line_width {
+    font-size: 2em;
+}
