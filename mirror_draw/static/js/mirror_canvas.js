@@ -21,7 +21,9 @@ class MirrorCanvas {
         this.canvas_width = canvas_width_percent / 100 * this.window.innerWidth;
         this.canvas_height = canvas_height_percent / 100 * this.window.innerHeight;
         this.offset_left = ((100 - canvas_width_percent) / 2) / 100 * this.window.innerWidth;
-        this.offset_top = ((100 - canvas_height_percent) / 2) / 100 * this.window.innerHeight;
+
+        let additional_offset_top = 2; // in %
+        this.offset_top = (((100 - canvas_height_percent) / 2) + additional_offset_top) / 100 * this.window.innerHeight;
 
         this.horizontal_line_pos = this.window.innerHeight / 2;
         this.vertical_line_pos = this.window.innerWidth / 2;

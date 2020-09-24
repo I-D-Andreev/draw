@@ -26,19 +26,56 @@
     position: absolute;
 }
 
-#colour_picker_div, #show_id, #buttons {
-    /* border: 1px solid black; */
-    float:left;
-    position: relative;
-    margin-left: 5%;
-}
 
 #eraser {
-    background-color: lightseagreen;
+    background-color: green;
     border: 0px;
 }
 
 html, body {
-    height: 100%;
     width: 100%;
+    height: 100%;
+    margin: 0;
+    /* background-color: #aae8fd;  */
+    /* background-image: linear-gradient(blue, #aae8fd); */
+    background-image: linear-gradient(rgb(226, 100, 216), #aae8fd);
+}
+
+
+#header_div {
+    border: 2px solid red;
+    /* background-color: rgb(226, 100, 216); */
+    /* border-radius: 2px; */
+    /* background-image: linear-gradient(to right, rgb(189, 44, 189), purple); */
+    /* background-color: purple; */
+    width: 100%;
+    height: 6%;
+    /* text-align: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    margin: 0 auto; */
+}
+
+button {
+    background-color: lightgoldenrodyellow;
+}
+
+#colour_picker_div, #show_id, #buttons {
+    /* border: 2px solid black; */
+    background-color: orange;
+    /* margin: 0 auto; */
+    /* float: left; */
+    /* display: inline-block; */
+    width: 30%;
+    height: 100%;
+    float: left;
+    margin-left: 3%;
+
+    text-align: center;
+}
+
+
+div span {
+    background-color: red;
 }
