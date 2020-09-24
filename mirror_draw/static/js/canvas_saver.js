@@ -51,9 +51,11 @@ class CanvasSaver {
                 console.log('Received:', data);
 
                 if (data.success === true) {
-                    this.id = this.id ? this.id : data.id;
                     this.mirror_canvas.is_saved = true;
-                    this.id_display_field.innerHTML = this.id;
+                    if (!this.id){
+                        this.id = data.id;
+                        this.id_display_field.innerHTML += this.id;
+                    }
                 } else {
                     console.log('Response Error:', data.reason);
                 }
