@@ -126,6 +126,7 @@ button {
     border-radius: 2em;
     display:inline-block;
     width: fit-content;
+    outline: none;
 }
 
 #eraser {
