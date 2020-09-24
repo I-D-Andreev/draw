@@ -1,3 +1,4 @@
+import {cursor} from './cursor.js';
 class MirrorCanvas {
     #x = 0
     #y = 0
@@ -65,7 +66,7 @@ class MirrorCanvas {
 
         // fill with white colour
         this.context.fillStyle = 'white';
-        this.context.fillRect(0,0, this.canvas_width, this.canvas_height);
+        this.context.fillRect(0, 0, this.canvas_width, this.canvas_height);
 
         this.window.addEventListener('mousedown', this.#start_draw.bind(this));
         this.window.addEventListener('mousemove', this.#draw.bind(this));
@@ -100,22 +101,23 @@ class MirrorCanvas {
 
         this.horizontal_button.style.left = this.offset_left + this.canvas_width + offset_from_canvas + 'px';
         this.horizontal_button.style.top = this.horizontal_line_pos - (button_height / 2) + 'px';
-    
+
         this.vertical_button.style.left = this.vertical_line_pos - (button_width / 2) + 'px';
         this.vertical_button.style.top = this.offset_top - button_height - offset_from_canvas + 'px';
-        
+
         this.horizontal_button.addEventListener('click', this.#enable_disable_hor_line.bind(this));
         this.vertical_button.addEventListener('click', this.#enable_disable_ver_line.bind(this));
     }
 
-    #init_eraser(){
-        this.eraser.addEventListener('click', ()=>{
+    #init_eraser() {
+        this.eraser.addEventListener('click', () => {
             this.is_erasing = !this.is_erasing;
 
-            let cursor = this.is_erasing ? 'crosshair' : 'auto';
+            let crs = this.is_erasing ? `url(${cursor()}), auto` : 'auto';
+            
+            console.log(crs);
 
-            console.log(cursor);
-            document.getElementsByTagName('body')[0].style.cursor = cursor;
+            document.getElementsByTagName('body')[0].style.cursor = crs;
         });
     }
 
@@ -144,12 +146,12 @@ class MirrorCanvas {
         this.is_saved = false;
 
         this.context.beginPath();
-        if(this.is_erasing){
+        if (this.is_erasing) {
             this.context.globalCompositeOperation = 'destination-out';
             this.context.lineWidth = 15;
         } else {
             this.#init_brush();
-            this.context.globalCompositeOperation = 'source-over';    
+            this.context.globalCompositeOperation = 'source-over';
         }
 
         this.context.moveTo(x1, y1);
@@ -178,13 +180,13 @@ class MirrorCanvas {
         this.context.closePath();
     }
 
-    #enable_disable_hor_line(){
+    #enable_disable_hor_line() {
         this.horizontal_line_on = !this.horizontal_line_on;
         // '' - show line, 'none' - dont show line
         this.horizontal_line.style.display = !this.horizontal_line.style.display ? 'none' : '';
     }
 
-    #enable_disable_ver_line(){
+    #enable_disable_ver_line() {
         this.vertical_line_on = !this.vertical_line_on;
         // '' - show line, 'none' - dont show line
         this.vertical_line.style.display = !this.vertical_line.style.display ? 'none' : '';
