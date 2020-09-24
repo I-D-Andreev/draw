@@ -105,13 +105,9 @@ button {
 }
 
 #colour_picker, #eraser {
-    margin-left: 5%;
-    width: 12%;
+    margin-left: 3%;
 }
 
-#eraser {
-    font-size: 1.2em;
-}
 
 #line_width {
     font-size: 2em;
@@ -119,9 +115,28 @@ button {
 
 #horizontal_button, #vertical_button {
     height: 4%;
-    width: 3%;
+    /* width: 3%; */
 }
 
-/* i.fas {
-    font-size: 20px;
+button {
+    background-color: yellow;
+    /*  border:0.16em solid rgba(255,255,255,0); */
+/*     border-radius:2em; */
+    border: 0.16em solid yellow;
+    border-radius: 2em;
+    display:inline-block;
+    width: fit-content;
+}
+
+#eraser {
+    background-image: url("./../icons/eraser_small.ico");
+    height: 35px;
+    width: 40px;
+}
+/* 
+#eraser2 {
+    height: 35px;
+    width: 40px;
+    border-radius: 2em;
+    
 } */
