@@ -36,25 +36,18 @@ html, body {
     width: 100%;
     height: 100%;
     margin: 0;
-    /* background-color: #aae8fd;  */
-    /* background-image: linear-gradient(blue, #aae8fd); */
     background-image: linear-gradient(rgb(226, 100, 216), #aae8fd);
 }
 
 
 #header_div {
-    border: 2px solid red;
-    /* background-color: rgb(226, 100, 216); */
-    /* border-radius: 2px; */
-    /* background-image: linear-gradient(to right, rgb(189, 44, 189), purple); */
-    /* background-color: purple; */
-    width: 100%;
-    height: 6%;
-    /* text-align: center;
-    align-items: center;
-    justify-content: center;
-    justify-items: center;
-    margin: 0 auto; */
+    width: 60%;
+    height: 7%;
+
+    margin-left: 20%;
+    border-radius: 0px 0px 20px 20px;
+    background-color: rgb(86, 218, 114);
+
 }
 
 button {
@@ -67,6 +60,7 @@ button {
     height: 100%;
     float: left;
     margin-left: 3%;
+    /* margin-left: 8%; */
 
     text-align: center;
 }
@@ -86,15 +80,15 @@ button {
 }
 
 #buttons button{
-    height: 75%;
+    height: 60%;
     /* todo: coloring etc*/
 } 
 
 #save_button {
-    margin-right: 10%;
+    margin-right: 5%;
 }
 
 #download_button {
-    margin-left: 10%;
+    margin-left: 5%;
 }
 
