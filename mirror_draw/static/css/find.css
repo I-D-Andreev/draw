@@ -10,3 +10,55 @@
 	right: 0;
 	margin: auto;
 }
+
+#header_div {
+    width: 80%;
+    height: 6%;
+    min-width: 850px;
+
+    margin-left: 10%;
+    border-radius: 0px 0px 20px 20px;
+    background-color: rgb(86, 218, 114);
+    text-align: center;
+}
+
+#header_div div {
+    min-width: auto;
+    height: 100%;
+    float: left;
+    margin: auto 5% auto 5%;
+
+    text-align: center;
+}
+
+#buttons {
+    width: 30%;
+}
+
+#search_div {
+    width: 40%;
+}
+
+button {
+    height: 60%;
+}
+
+#buttons button {
+    margin: 0% auto 0% auto;
+
+}
+#search_div {
+    height: 100%;
+    float: left;
+    text-align: center;
+}
+
+#id_textbox {
+    width:15%;
+    margin-right: 3%;
+    text-align: right;
+}
+
+#id_span {
+    margin-right: 3px;
+}

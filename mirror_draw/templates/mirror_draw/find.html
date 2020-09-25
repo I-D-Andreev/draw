@@ -4,17 +4,27 @@
 <head>
     <title>Find Drawing</title>
     {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/global.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/find.css' %}" />
     <script type="module" src="{% static 'js/find.js' %}"></script>
 
+    <script src="https://kit.fontawesome.com/5db994464b.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div>
-        <input id="id_textbox" type="number" min="1" step="1" oninput="validity.valid||(value='');">
-        <button id="id_button">Search</button>
-        <button id="download_button">Download</button>
-        <button id="draw_button">Draw on this image</button>
+    <div id="header_div">
+        <div id="search_div" class="center_buttons">
+            <span id="id_span" class="center_text_span">  Drawing number:</span>
+            <input id="id_textbox" type="number" min="1" step="1" oninput="validity.valid||(value='');">
+            <button id="id_button">Search</button>
+        </div>
+        <div id="buttons" class="center_buttons">
+            <button id="download_button">Download</button>
+            <button id="draw_button">Draw on this image</button>
+            <button id="menu_button" onclick="location.href='./..'">Back to Menu</button>
+        </div>
+
     </div>
     <img id="drawing" class="centered_img">
 
