@@ -1,4 +1,5 @@
 import { DrawingDownloader } from './drawing_downloader.js'
+import { Alert } from './alert.js'
 class CanvasSaver {
     constructor(mirror_canvas, save_button, download_button, id_display) {
         this.mirror_canvas = mirror_canvas;
@@ -11,8 +12,8 @@ class CanvasSaver {
         this.id = null;
     }
 
-    download_image(){
-        if (!this.mirror_canvas.is_saved){
+    download_image() {
+        if (!this.mirror_canvas.is_saved) {
             this.save_image();
         }
 
@@ -52,16 +53,19 @@ class CanvasSaver {
 
                 if (data.success === true) {
                     this.mirror_canvas.is_saved = true;
-                    if (!this.id){
+                    if (!this.id) {
                         this.id = data.id;
                         this.id_display_field.innerHTML += this.id;
+                    } else {
+                        // don't show alert on the first time as we will probably be auto-saving
+                        Alert.show_alert('Successfully saved image!', 'lightgreen');
                     }
                 } else {
-                    console.log('Response Error:', data.reason);
+                        Alert.show_alert('Problem saving image: ' + data.reason, 'red');
                 }
             })
             .catch((error) => {
-                console.error('Promise Error:', error);
+                Alert.show_alert('Unknown error occurred when saving image: ' + error, 'red');
             });
 
     }

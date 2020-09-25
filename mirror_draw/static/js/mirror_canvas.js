@@ -1,4 +1,4 @@
-import {cursor} from './cursor.js';
+import { cursor } from './cursor.js';
 class MirrorCanvas {
     #x = 0
     #y = 0
@@ -114,7 +114,7 @@ class MirrorCanvas {
             this.is_erasing = !this.is_erasing;
 
             let crs = this.is_erasing ? `url(${cursor()}), auto` : 'auto';
-            
+
             console.log(crs);
 
             document.getElementsByTagName('body')[0].style.cursor = crs;

@@ -17,5 +17,3 @@ class DrawingLoaderID {
 }
 
 export { DrawingLoaderID };
-
-
