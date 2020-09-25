@@ -84,18 +84,22 @@ html, body {
 }
 
 #colour_picker_div * {
-    height: 50%;
-    width: 8%;
+    height: 55%;
+    width: 10%;
 }
 
 #colour_picker, #eraser {
-    margin-left: 3%;
+    margin-left: 4%;
 }
 
 
 #line_width {
-    font-size: 2em;
+    font-size: 1.8em;
 }
+/* 
+#plus_width, #minus_width {
+    min-width: 20px;
+} */
 
 button {
     background-color: yellow;
