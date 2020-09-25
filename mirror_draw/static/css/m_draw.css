@@ -62,7 +62,7 @@ html, body {
 
 #id_display{
     height: 100%;
-    font-size: large; /* todo: change size and color */ 
+    font-size: large; 
 }
 
 
@@ -96,10 +96,6 @@ html, body {
 #line_width {
     font-size: 1.8em;
 }
-/* 
-#plus_width, #minus_width {
-    min-width: 20px;
-} */
 
 button {
     background-color: yellow;
