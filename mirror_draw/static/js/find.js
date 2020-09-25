@@ -13,6 +13,11 @@ window.addEventListener('load', () => {
 
     let drawing_loader = new DrawingLoader(img);
 
+    id_box.addEventListener('click', ()=>{
+        id_box.focus();
+        id_box.select();
+    });
+
     id_box.addEventListener('keydown', (e) => {
         if (e.key.toLowerCase().includes('enter')) {
             id_button.click();
