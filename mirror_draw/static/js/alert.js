@@ -1,5 +1,5 @@
 class Alert {
-    static show_alert(text, colour) {
+    static show_alert(text, colour, wait_time=0.75) {
         let d = document.createElement('div');
         d.style.backgroundColor = colour;
         d.style.width = '100%';
@@ -16,7 +16,7 @@ class Alert {
         d.appendChild(t);
 
         document.getElementsByTagName('body')[0].appendChild(d);
-        setTimeout(this.#fade_out.bind(this), 750, d, 40 ,3);
+        setTimeout(this.#fade_out.bind(this), wait_time * 1000, d, 40 ,3);
     }
 
     static #fade_out(elem, times, seconds) {
@@ -31,7 +31,6 @@ class Alert {
 
     static #calculate(elem, step, i , times) {
         let opac = Number(elem.style.opacity);
-        console.log(opac, ' ', step);
         opac = Math.max(0, opac - step);
         elem.style.opacity = String(opac);
 

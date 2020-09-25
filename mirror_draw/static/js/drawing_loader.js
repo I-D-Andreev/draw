@@ -1,3 +1,5 @@
+import { Alert } from './alert.js'
+
 const LOAD_TYPE = {
     IMAGE: "image",
     CANVAS: "canvas",
@@ -53,7 +55,7 @@ class DrawingLoader {
 
                 } else {
                     console.log('Response Error:', data.reason);
-                    alert(data.reason);
+                    Alert.show_alert('Error: ' + data.reason, 'red', 1.5);
                 }
             })
             .catch((error) => {
