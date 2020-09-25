@@ -55,7 +55,6 @@ button {
 }
 
 #colour_picker_div, #id_div, #buttons {
-    /* background-color: orange; */
     width: 25%;
     height: 100%;
     float: left;
@@ -73,18 +72,9 @@ button {
 }
 
 
-
 #buttons button {
     height: 60%;
-    /* todo: coloring etc*/
-} 
-
-#save_button {
-    margin-right: 5%;
-}
-
-#download_button {
-    margin-left: 5%;
+    margin: 0% 5% 0% 5%;
 }
 
 .center_buttons {
@@ -136,3 +126,6 @@ button:hover {
     width: 40px;
 }
 
+#menu_button {
+    background-color: orange;
+}
