@@ -22,7 +22,7 @@
 }
 
 .line_button {
-    height: 25px;
+    height: 4%;
     position: absolute;
 }
 
@@ -43,27 +43,21 @@ html, body {
 #header_div {
     width: 80%;
     height: 6%;
+    min-width: 800px;
 
     margin-left: 10%;
     border-radius: 0px 0px 20px 20px;
-    background-color: rgb(86, 218, 114)
-
-}
-
-button {
-    background-color: lightgoldenrodyellow;
+    background-color: rgb(86, 218, 114);
 }
 
 #colour_picker_div, #id_div, #buttons {
     width: 25%;
+    min-width: auto;
     height: 100%;
     float: left;
-    margin-left: 2.5%;
+    margin: auto 4% auto 4%;
 
     text-align: center;
-}
-#colour_picker_div {
-    width: 40%;
 }
 
 #id_display{
@@ -74,7 +68,7 @@ button {
 
 #buttons button {
     height: 60%;
-    margin: 0% 5% 0% 5%;
+    margin: 0% auto 0% auto;
 }
 
 .center_buttons {
@@ -103,16 +97,12 @@ button {
     font-size: 2em;
 }
 
-#horizontal_button, #vertical_button {
-    height: 4%;
-}
-
 button {
     background-color: yellow;
     border: 0.25em solid rgba(255,255,255,0.1);;
     border-radius: 2em;
     display:inline-block;
-    width: fit-content;
+    min-width: fit-content;
     outline: none;
 }
 
@@ -128,4 +118,8 @@ button:hover {
 
 #menu_button {
     background-color: orange;
+}
+
+* {
+    font-family: 'Oxygen Mono', monospace;
 }
