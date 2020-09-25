@@ -42,7 +42,7 @@ window.addEventListener('load', () => {
     draw_button.addEventListener('click', () => {
         let curr_id = drawing_loader.current_id;
         if (curr_id) {
-            location.href = ('mirror_draw/?id=' + curr_id);
+            location.href = ('../mirror_draw/?id=' + curr_id);
         }
     });
 })
