@@ -4,6 +4,7 @@
 <head>
     <title>Mirror Draw Home</title>
     {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/global.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/m_draw_home.css' %}" />
     
 
@@ -11,11 +12,23 @@
 </head>
 
 <body>
-    <div id="grid_div" class="grid">
-        <div id="grid_item_1" class="grid_item"></div>
-        <div id="grid_item_2" class="grid_item"></div>
-        <div id="grid_item_3" class="grid_item"></div>
-        <div id="grid_item_4" class="grid_item"></div>
+    <div id="grid_div" class="grid_container centered_div">
+        <div id="grid_item_1" class="grid_item">
+            <img id="img_1" class="img_in_div">
+        </div>
+            
+        <div id="grid_item_2" class="grid_item">
+            <img id="img_2" class="img_in_div">
+        </div>
+            
+        <div id="grid_item_3" class="grid_item">
+            <img id="img_3" class="img_in_div">
+        </div>
+            
+        <div id="grid_item_4" class="grid_item">
+            <img id="img_4" class="img_in_div">
+        </div>
+            
 
     </div>
 
