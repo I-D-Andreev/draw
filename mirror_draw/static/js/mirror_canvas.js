@@ -115,8 +115,6 @@ class MirrorCanvas {
 
             let crs = this.is_erasing ? `url(${cursor()}), auto` : 'auto';
 
-            console.log(crs);
-
             document.getElementsByTagName('body')[0].style.cursor = crs;
         });
     }

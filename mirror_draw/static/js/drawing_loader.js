@@ -34,10 +34,10 @@ class DrawingLoader {
             mode: 'same-origin',
         }).then(response => response.json())
             .then(data => {
-                console.log('Received:', data);
+                // console.log('Received:', data);
 
                 if (data.success === true) {
-                    console.log('Successful load! Type: ' + type);
+                    // console.log('Successful load! Type: ' + type);
                     this.current_id = drawing_id;
                     if (type === LOAD_TYPE.IMAGE) {
                         this.img.src = data.data;
@@ -54,12 +54,12 @@ class DrawingLoader {
                     }
 
                 } else {
-                    console.log('Response Error:', data.reason);
+                    // console.log('Response Error:', data.reason);
                     Alert.show_alert('Error: ' + data.reason, 'red', 1.5);
                 }
             })
             .catch((error) => {
-                console.error('Promise Error:', error);
+                // console.error('Promise Error:', error);
             });
 
     }

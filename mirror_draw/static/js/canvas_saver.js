@@ -49,7 +49,7 @@ class CanvasSaver {
             body: body_str
         }).then(response => response.json())
             .then(data => {
-                console.log('Received:', data);
+                // console.log('Received:', data);
 
                 if (data.success === true) {
                     this.mirror_canvas.is_saved = true;
