@@ -11,7 +11,7 @@ class MirrorCanvas {
         this.vertical_button = ver_button;
         this.colour_picker = colour_picker;
         this.eraser = eraser_btn;
-        this.window = window
+        this.window = window;
 
 
         this.context = this.canvas.getContext('2d');
@@ -35,6 +35,7 @@ class MirrorCanvas {
         this.#init_canvas();
         this.#init_mirror_lines();
         this.#init_line_buttons();
+        this.#init_colour_picker();
         this.#init_eraser();
     }
 
@@ -107,6 +108,13 @@ class MirrorCanvas {
 
         this.horizontal_button.addEventListener('click', this.#enable_disable_hor_line.bind(this));
         this.vertical_button.addEventListener('click', this.#enable_disable_ver_line.bind(this));
+    }
+
+    #init_colour_picker(){
+        this.colour_picker.colour_picker.addEventListener('click', ()=>{
+            this.is_erasing = false;
+            document.getElementsByTagName('body')[0].style.cursor = 'auto';
+        });
     }
 
     #init_eraser() {
