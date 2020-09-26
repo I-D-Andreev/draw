@@ -4,7 +4,6 @@
 
 
 .centered_div {
-    /* maybe remove this border? */
     border: 2px solid black;
     position: absolute;
     height: 80%;
