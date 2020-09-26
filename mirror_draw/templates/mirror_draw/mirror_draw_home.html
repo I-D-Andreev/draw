@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
+<html lang="en">
 
 <head>
     <title>Mirror Draw Home</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/global.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/m_draw_home.css' %}" />
-    
+
 
     <link href="https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap" rel="stylesheet">
 </head>
@@ -17,22 +18,22 @@
             <label>Mirror Draw</label>
             <img id="img_1" class="img_in_div" src="{% static 'images/mirror_draw.png'%}">
         </div>
-            
+
         <div id="grid_item_2" class="grid_item" onclick="location.href='./find/'">
             <label>Find Drawing</label>
             <img id="img_2" class="img_in_div" src="{% static 'images/find.png'%}">
         </div>
-            
+
         <div id="grid_item_3" class="grid_item" onclick="location.href='./browse/'">
             <label>Browse Drawings</label>
             <img id="img_3" class="img_in_div" src="{% static 'images/browse.png'%}">
         </div>
-            
+
         <div id="grid_item_4" class="grid_item" onclick="location.href='./help/'">
             <label>Help / How to use</label>
             <img id="img_4" class="img_in_div">
         </div>
-            
+
 
     </div>
 </body>
