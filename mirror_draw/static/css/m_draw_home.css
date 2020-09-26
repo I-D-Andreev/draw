@@ -30,15 +30,22 @@
 }
 
 .grid_item {
-    border: 2px solid black;
     height: 95%;
     width: 95%;
     box-sizing: border-box;
     background-color: lightblue;
+
+    border: 2px solid rgba(255,255,255,0.1);
+
+}
+
+.grid_item:hover {
+    border-color:black; /* todo: change when all is ready*/ 
 }
 
 .img_in_div {
     height: 90%;
     width: 90%;
+
     background-color: pink;
 }
