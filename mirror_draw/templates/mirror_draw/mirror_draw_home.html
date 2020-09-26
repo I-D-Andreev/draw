@@ -3,10 +3,23 @@
 
 <head>
     <title>Mirror Draw Home</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/m_draw_home.css' %}" />
+    
+
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <form action="./mirror_draw">
+    <div id="grid_div" class="grid">
+        <div id="grid_item_1" class="grid_item"></div>
+        <div id="grid_item_2" class="grid_item"></div>
+        <div id="grid_item_3" class="grid_item"></div>
+        <div id="grid_item_4" class="grid_item"></div>
+
+    </div>
+
+    <!-- <form action="./mirror_draw">
         <input type="submit" value="Mirror Draw" />
     </form>
 
@@ -20,7 +33,7 @@
 
     <form action="./help">
         <input type="submit" value="Help" />
-    </form>
+    </form> -->
 </body>
 
 </html>
