@@ -34,8 +34,7 @@
 .img_div {
     height: 90%;
     width: 90%;
-    border: 1px dashed;
-    border-color: gradient();
+    border: 1px dashed blue;
 }
 
 #next_button {
