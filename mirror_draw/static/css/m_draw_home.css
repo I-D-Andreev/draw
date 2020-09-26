@@ -44,8 +44,10 @@
 }
 
 .img_in_div {
-    height: 90%;
-    width: 90%;
+    height: 87%;
+    width: 87%;
+    margin-top: 2%;
+
 
     background-color: pink;
 }
