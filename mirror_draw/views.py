@@ -26,8 +26,8 @@ def draw_view_browse(request, *args, **kwargs):
     return render(request, 'mirror_draw/browse.html', {'num_drawings': num_drawings})
 
 
-def draw_view_other(request, *args, **kwargs):
-    return render(request, 'mirror_draw/other.html', {})
+def draw_view_help(request, *args, **kwargs):
+    return render(request, 'mirror_draw/help.html', {})
 
 
 def draw_view_find_image(request, *args, **kwargs):

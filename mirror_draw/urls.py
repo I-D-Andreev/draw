@@ -20,7 +20,7 @@ from mirror_draw.views import (draw_view_home,
                                draw_view_find_image,
                                draw_view_query_image,
                                draw_view_browse,
-                               draw_view_other)
+                               draw_view_help)
 
 urlpatterns = [
     path('', draw_view_home),
@@ -29,5 +29,5 @@ urlpatterns = [
     path('find/', draw_view_find_image),
     path('browse/', draw_view_browse),
     path('find/<int:drawing_id>', draw_view_query_image),
-    path('other/', draw_view_other),
+    path('help/', draw_view_help),
 ]
