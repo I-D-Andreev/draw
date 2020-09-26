@@ -4,14 +4,21 @@
 <head>
     <title>Browse Drawings</title>
     {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/global.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/browse.css' %}" />
     <script type="module" src="{% static 'js/browse.js' %}"></script>
 
+    <script src="https://kit.fontawesome.com/5db994464b.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <h1 class="centered_text"> Browse Drawings </h1>
-    <div class="centered_div grid_container centered_text">
+    <div id="header_div">
+       <span id="text_id">Browse Drawings</span>
+       <button id="menu_button" onclick="location.href='./..'">Back to Menu</button>
+    </div>
+    
+    <div id="drawings_grid" class="centered_div grid_container centered_text">
         <div class="grid_item">
             <label>Identification number:</label>
             <label id="id_label_1">None</label>
@@ -36,8 +43,8 @@
             <img id="drawing_4" class="img_div">
         </div>
     </div>
-    <button id="next_button" class="vertical_align">Next</button>
-    <button id="prev_button" class="vertical_align">Previous</button>
+    <button id="next_button" class="vertical_align"><i class="fas fa-chevron-circle-right"></i></button>
+    <button id="prev_button" class="vertical_align"><i class="fas fa-chevron-circle-left "></i></button>
 
     {% csrf_token %}
     <script>
