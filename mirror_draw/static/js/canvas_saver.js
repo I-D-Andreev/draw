@@ -65,7 +65,7 @@ class CanvasSaver {
                 }
             })
             .catch((error) => {
-                Alert.show_alert('Unknown error occurred when saving image: ' + error, 'red');
+                Alert.show_alert('Unknown error occurred when saving image!', 'red');
             });
 
     }

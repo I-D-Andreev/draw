@@ -1,7 +1,7 @@
 import { DrawingLoaderID } from './drawing_loader_with_ID.js'
 
 window.addEventListener('load', () => {
-    // numbers of drawings is saved into the num_drawings letiable
+    console.log('Number of drawings: ' + num_drawings);
 
     // pad 0th element so that array index matches html elements id
     let loaders = [null];
