@@ -1,4 +1,6 @@
-
+.centered_text {
+    text-align: center;
+}
 
 #grid_div {
     height: 90%;
@@ -23,7 +25,8 @@
     grid-template-rows: 50% 50%;
 
     align-items: center;
-    justify-items: center;    
+    justify-items: center;
+    background-color: white;
 }
 
 .grid_item {
@@ -31,10 +34,11 @@
     height: 95%;
     width: 95%;
     box-sizing: border-box;
+    background-color: lightblue;
 }
 
 .img_in_div {
-    height: 100%;
-    width: 100%;
+    height: 90%;
+    width: 90%;
     background-color: pink;
 }
