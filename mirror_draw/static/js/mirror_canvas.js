@@ -10,7 +10,7 @@ class MirrorCanvas {
         this.horizontal_button = hor_button;
         this.vertical_button = ver_button;
         this.colour_picker = colour_picker;
-        this.eraser = eraser;
+        this.eraser = eraser_btn;
         this.window = window
 
 

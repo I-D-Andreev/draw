@@ -16,7 +16,7 @@ window.addEventListener('load', () => {
   let horizontal_button = document.getElementById('horizontal_button');
   let vertical_button = document.getElementById('vertical_button');
   let eraser_button = document.getElementById('eraser');
-  let canvas = new MirrorCanvas(canvas_element, horizontal_line, vertical_line, horizontal_button, vertical_button, colour_line_picker, eraser, window);
+  let canvas = new MirrorCanvas(canvas_element, horizontal_line, vertical_line, horizontal_button, vertical_button, colour_line_picker, eraser_button, window);
 
   let save_button = document.getElementById('save_button');
   let download_button = document.getElementById('download_button');
