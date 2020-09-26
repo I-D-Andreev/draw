@@ -39,11 +39,11 @@
 }
 
 #next_button {
-    left: 92%;
+    left: 91%;
 }
 
 #prev_button {
-    left: 5%;
+    left: 6%;
 }
 
 .vertical_align {
@@ -65,3 +65,12 @@
     font-size: 25px;
 }
 
+#header_div {
+    font-size: 20px;
+}
+
+#menu_button{
+    position: absolute;
+    margin-left: 35%;
+    height: 3.6%;
+}
