@@ -83,7 +83,6 @@ class MirrorCanvas {
     }
 
     p_init_mirror_lines() {
-        console.log('Init lines');
         let border_width_str = getComputedStyle(this.canvas).borderWidth || getComputedStyle(this.canvas).MozBorderEndWidth;  
         let canvas_border_size = parseInt(border_width_str.replace('px', ''));
 

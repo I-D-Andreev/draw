@@ -59,6 +59,10 @@
     width: 10%;
 }
 
+#colour_picker {
+    width: 20%;
+}
+
 #colour_picker, #eraser {
     margin-left: 4%;
 }
