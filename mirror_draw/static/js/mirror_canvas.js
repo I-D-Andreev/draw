@@ -83,10 +83,13 @@ class MirrorCanvas {
     }
 
     p_init_mirror_lines() {
-        let canvas_border_size = parseInt(getComputedStyle(this.canvas).borderWidth.replace('px', ''));
+        console.log('Init lines');
+        let border_width_str = getComputedStyle(this.canvas).borderWidth || getComputedStyle(this.canvas).MozBorderEndWidth;  
+        let canvas_border_size = parseInt(border_width_str.replace('px', ''));
 
         this.horizontal_line.style.top = this.horizontal_line_pos + 'px';
         this.horizontal_line.style.left = this.offset_left + 'px';
+        
         this.horizontal_line.style.width = (this.canvas_width + 2 * canvas_border_size) + 'px';
 
         this.vertical_line.style.top = this.offset_top + canvas_border_size + 'px';
@@ -110,8 +113,8 @@ class MirrorCanvas {
         this.vertical_button.addEventListener('click', this.p_enable_disable_ver_line.bind(this));
     }
 
-    p_init_colour_picker(){
-        this.colour_picker.colour_picker.addEventListener('click', ()=>{
+    p_init_colour_picker() {
+        this.colour_picker.colour_picker.addEventListener('click', () => {
             this.is_erasing = false;
             document.getElementsByTagName('body')[0].style.cursor = 'auto';
         });

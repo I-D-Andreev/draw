@@ -25,6 +25,7 @@ button:hover {
 
 #menu_button {
     background-color: orange;
+    min-width: 128px;
 }
 
 #header_div {
