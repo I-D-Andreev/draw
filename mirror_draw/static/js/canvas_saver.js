@@ -27,14 +27,14 @@ class CanvasSaver {
         }
 
         if (this.id === null) {
-            this.#send_to_db('post', body);
+            this.p_send_to_db('post', body);
         } else {
             body['id'] = this.id;
-            this.#send_to_db('put', body);
+            this.p_send_to_db('put', body);
         }
     }
 
-    #send_to_db(http_verb, body) {
+    p_send_to_db(http_verb, body) {
         let body_str = JSON.stringify(body);
 
         let req = new Request('/draw/mirror_draw/save',

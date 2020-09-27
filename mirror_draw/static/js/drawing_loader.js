@@ -13,17 +13,17 @@ class DrawingLoader {
 
     load_image(drawing_id) {
         if (String(drawing_id).length > 0 && !isNaN(drawing_id)) {
-            this.#query_database(drawing_id, LOAD_TYPE.IMAGE);
+            this.p_query_database(drawing_id, LOAD_TYPE.IMAGE);
         }
     }
 
     load_canvas(drawing_id) {
         if (String(drawing_id).length > 0 && !isNaN(drawing_id)) {
-            this.#query_database(drawing_id, LOAD_TYPE.CANVAS);
+            this.p_query_database(drawing_id, LOAD_TYPE.CANVAS);
         }
     }
 
-    #query_database(drawing_id, type) {
+    p_query_database(drawing_id, type) {
         let req = new Request('/draw/find/' + drawing_id,
             {
                 headers: { 'X-CSRFToken': csrftoken }

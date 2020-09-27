@@ -7,10 +7,10 @@ class DrawingLoaderID {
 
         this.drawing_loader = new DrawingLoader(this.img);
     
-        this.img.addEventListener('load', this.#on_image_load.bind(this));
+        this.img.addEventListener('load', this.p_on_image_load.bind(this));
     }
 
-    #on_image_load(){
+    p_on_image_load(){
         this.id_label.innerHTML = this.drawing_loader.current_id ? this.drawing_loader.current_id : 'None';
     }
 

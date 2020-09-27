@@ -16,20 +16,20 @@ class Alert {
         d.appendChild(t);
 
         document.getElementsByTagName('body')[0].appendChild(d);
-        setTimeout(this.#fade_out.bind(this), wait_time * 1000, d, 40 ,3);
+        setTimeout(this.p_fade_out.bind(this), wait_time * 1000, d, 40 ,3);
     }
 
-    static #fade_out(elem, times, seconds) {
+    static p_fade_out(elem, times, seconds) {
         let step = 1 / times;
         let intrvl = (seconds * 1000) / times;
 
         for (let i = 1; i <= times; i++) {
-            setTimeout(this.#calculate, i*intrvl, elem, step, i , times);
+            setTimeout(this.p_calculate, i*intrvl, elem, step, i , times);
         }
 
     }
 
-    static #calculate(elem, step, i , times) {
+    static p_calculate(elem, step, i , times) {
         let opac = Number(elem.style.opacity);
         opac = Math.max(0, opac - step);
         elem.style.opacity = String(opac);
