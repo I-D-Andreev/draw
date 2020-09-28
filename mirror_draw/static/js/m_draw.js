@@ -30,4 +30,6 @@ window.addEventListener('load', () => {
     canvas_loader = new DrawingLoader(canvas_element);
     canvas_loader.load_canvas(drawing_id);
   }
+
+  save_button.click();
 });
