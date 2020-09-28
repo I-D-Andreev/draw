@@ -1,20 +1,14 @@
-.centered_div {
-    position: absolute;
-
-    top:0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-    margin: auto auto auto auto;    
-}
 
 #full_page_div {
     height: 100%;
-    width: 80%;
+    width: auto;
     display: inline-block;
-    /* background-color: pink; */
 
-    min-width: 80%;
+    overflow-x: auto;
+    padding: 0% 10%;
+    margin: 0;
+
+    position: absolute;
 }
 
 p:not(:first-of-type) {
