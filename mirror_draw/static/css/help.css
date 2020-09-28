@@ -19,12 +19,12 @@ p:not(:first-of-type) {
 
 .header {
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
 }
 
 .title {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     text-align: center;
 }
 
