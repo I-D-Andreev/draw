@@ -19,6 +19,7 @@
     text-align: center;
     font-size: 3.2rem;
     font-weight: bold;
+    color: #2cf52c;
 }
 
 #text {
@@ -29,6 +30,9 @@
 
     font-size: 2rem;    
     text-align: center;
+
+    font-weight: bold;
+    color: #fbfb4c;
 }
 
 #img {
@@ -42,7 +46,8 @@
     margin: auto 25%;
     height: 5%;
     margin-top: 5%;
-    background-color: orange;
+    background-color: #ff4040;
+    color: white;
 
     font-size: 20px;
 }
