@@ -58,7 +58,7 @@ class CanvasSaver {
                         this.id_display_field.innerHTML += this.id;
                     } else {
                         // don't show alert on the first time as we will probably be auto-saving
-                        Alert.show_alert('Successfully saved image!', 'lightgreen');
+                        Alert.show_alert('Successfully saved the drawing!', 'lightgreen');
                     }
                 } else {
                         Alert.show_alert('Problem saving image: ' + data.reason, 'red');

@@ -41,11 +41,11 @@ def draw_view_query_image(request, drawing_id, *args, **kwargs):
             return JsonResponse(GetImageResponse(drawing_id, True, data=drawing.string_image).as_dict())
         except ObjectDoesNotExist:
             return JsonResponse(
-                GetImageResponse(drawing_id, False, reason='Drawing with such an ID does not exist').as_dict())
+                GetImageResponse(drawing_id, False, reason='Drawing with such a number does not exist!').as_dict())
         except ValueError:
-            return JsonResponse(GetImageResponse(drawing_id, False, reason='Drawing ID should be a number').as_dict())
+            return JsonResponse(GetImageResponse(drawing_id, False, reason='Drawing number incorrect!').as_dict())
         except:
-            return JsonResponse(GetImageResponse(drawing_id, False, reason='Unknown error has occurred').as_dict())
+            return JsonResponse(GetImageResponse(drawing_id, False, reason='Unknown error has occurred!').as_dict())
 
 
 def draw_view_save_image(request, *args, **kwargs):
@@ -63,8 +63,8 @@ def draw_view_save_image(request, *args, **kwargs):
             drawing.save()
             return JsonResponse(SaveImageResponse(draw_id, True).as_dict())
         except ObjectDoesNotExist:
-            return JsonResponse(SaveImageResponse(draw_id, False, 'Drawing with such an ID does not exist').as_dict())
+            return JsonResponse(SaveImageResponse(draw_id, False, 'Drawing with such a number does not exist').as_dict())
         except ValueError:
-            return JsonResponse(SaveImageResponse(draw_id, False, 'Drawing ID should be a number').as_dict())
+            return JsonResponse(SaveImageResponse(draw_id, False, 'Drawing number incorrect!').as_dict())
         except:
-            return JsonResponse(SaveImageResponse(draw_id, False, 'Unknown error has occurred').as_dict())
+            return JsonResponse(SaveImageResponse(draw_id, False, 'Unknown error has occurred!').as_dict())
