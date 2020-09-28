@@ -155,7 +155,7 @@ class MirrorCanvas {
 
         this.context.beginPath();
         if (this.is_erasing) {
-            this.context.globalCompositeOperation = 'destination-out';
+            this.context.strokeStyle = 'white';
             this.context.lineWidth = 15;
         } else {
             this.p_init_brush();
