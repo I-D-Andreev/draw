@@ -11,11 +11,10 @@
 .centered_div {
     position: absolute;
 
-    top:0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-    margin: auto auto auto auto;    
+    top: 7%;
+	bottom: 3%;
+	left: 10%;
+    right:10%;
 }
 
 
@@ -26,7 +25,7 @@
 
     align-items: center;
     justify-items: center;
-    background-color: white;
+    /* background-color: white; */
 }
 
 .grid_item {
@@ -50,4 +49,16 @@
 
 
     background-color: pink;
+}
+
+#start_button {
+    width: 30%;
+    height: 4%;
+    min-width: 240px;
+
+    margin-left: 35%;
+    border-radius: 0px 0px 20px 20px;
+    background-color:orange;
+    text-align: center;
+    font-size: large;
 }
