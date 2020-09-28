@@ -20,8 +20,11 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
+with open(os.path.join(BASE_DIR, 'draw', 'secret', 'k.txt'), 'r') as f:
+    k = f.read().strip()
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '1i1a%q@&wnr)x6kw^qim+s84ihaaaaaah6%i!_@d_^)1(@yumd'
+SECRET_KEY = k
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -123,7 +126,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
