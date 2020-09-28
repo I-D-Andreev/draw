@@ -4,3 +4,4 @@ db.sqlite3
 py_venv/
 k.txt
 migrations/
+static/
