@@ -11,18 +11,20 @@
     position: absolute;
 }
 
+
+
 p:not(:first-of-type) {
     text-align: justify;
 }
 
 .header {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.2rem;
 }
 
 .title {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.5rem;
     text-align: center;
 }
 
