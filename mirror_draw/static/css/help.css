@@ -11,6 +11,23 @@
 #full_page_div {
     height: 100%;
     width: 80%;
-    background-color: pink;
+    display: inline-block;
+    /* background-color: pink; */
+
+    min-width: 80%;
 }
 
+p:not(:first-of-type) {
+    text-align: justify;
+}
+
+.header {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
