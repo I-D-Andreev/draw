@@ -1,19 +1,18 @@
-<!DOCTYPE html>
-<html>
-<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
 
-<head>
+{% block head %}
+
     <title>Mirror Draw</title>
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/global.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/m_draw.css' %}" />
     <script type="module" src="{% static 'js/m_draw.js' %}"></script>
 
     <script src="https://kit.fontawesome.com/5db994464b.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap" rel="stylesheet">
-</head>
 
-<body>
+{% endblock %}
+
+
+{% block body %}
 
     <canvas id="md_canvas" class="canv"></canvas>
     <div id="horizontal_line" class="horizontal_line"></div>
@@ -46,6 +45,5 @@
         const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
         const drawing_id = {{ draw_id }};
     </script>
-</body>
 
-</html>
+{% endblock %}

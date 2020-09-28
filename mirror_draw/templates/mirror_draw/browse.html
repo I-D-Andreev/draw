@@ -1,19 +1,18 @@
-<!DOCTYPE html>
-<html>
-<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
 
-<head>
-    <title>Browse Drawings</title>
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/global.css' %}" />
+{% block head %}
+
+    <title>Browse Drawings</title> 
     <link rel="stylesheet" type="text/css" href="{% static 'css/browse.css' %}" />
     <script type="module" src="{% static 'js/browse.js' %}"></script>
-
     <script src="https://kit.fontawesome.com/5db994464b.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap" rel="stylesheet">
-</head>
 
-<body>
+{% endblock %}
+
+
+{% block body %}
+
     <div id="header_div" class="center_buttons">
         Browse Drawings
         <button id="menu_button" onclick="location.href='./..'">Back to Menu</button>
@@ -52,6 +51,5 @@
         const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
         const num_drawings = {{ num_drawings }};
     </script>
-</body>
 
-</html>
+{% endblock %}

@@ -1,18 +1,16 @@
-<!DOCTYPE html>
-<html>
-<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
 
-<head>
+{% block head %}
+
     <title>Mirror Draw Home</title>
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/global.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/m_draw_home.css' %}" />
 
+{% endblock %}
 
-    <link href="https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap" rel="stylesheet">
-</head>
 
-<body>
+{% block body %}
+
     <button id="start_button" onclick="location.href='./../'">Back to Start</button>
 
     <div id="grid_div" class="grid_container centered_div centered_text">
@@ -35,9 +33,6 @@
             <label>Help / How to use</label>
             <img id="img_4" class="img_in_div" src="{% static 'images/help.png'%}">
         </div>
-
-
     </div>
-</body>
 
-</html>
+{% endblock %}

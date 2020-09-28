@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html>
-<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
 
-<head>
+{% block head %}
+
     <title>Help</title>
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/global.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/help.css' %}" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap" rel="stylesheet">
-</head>
+{% endblock %}
 
-<body>
+
+{% block body %}
     <div id="full_page_div">
         <p class="title">Help Page and Controls Information</p>
         <p>Mirror draw allows you to easily create a symmetrical picture. It lets
@@ -53,6 +51,5 @@
 
         <button id="menu_button" onclick="location.href='./..'">Back to Menu</button>
     </div>
-</body>
 
-</html>
+{% endblock %}

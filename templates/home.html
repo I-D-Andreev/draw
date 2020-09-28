@@ -1,17 +1,16 @@
-<!DOCTYPE html>
-<html>
-<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
 
-<head>
+{% block head %}
+
     <title>Mirror Draw Start</title>
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/global.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap" rel="stylesheet">
-</head>
+{% endblock %}
 
-<body>
+
+{% block body %}
+
     <div id="full_page_div">
         <p id="heading"> Welcome to Mirror Draw</p>
         <p id="text">Mirror Draw helps you easily create symmetrical
@@ -20,6 +19,4 @@
         <button id="btn" onclick="location.href='./draw/'">Get Started</button>
     </div>
 
-</body>
-
-</html>
+{% endblock %}
