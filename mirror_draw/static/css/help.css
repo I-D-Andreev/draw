@@ -25,3 +25,10 @@ p:not(:first-of-type) {
     font-size: 20px;
     text-align: center;
 }
+
+#menu_button {
+    float: right;
+    margin-bottom: 3%;
+    height: 35px;
+
+}
