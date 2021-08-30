@@ -1,0 +1,19 @@
+cd draw
+
+python -m venv py_venv
+
+source venv.sh
+
+pip install --timeout 1000 -r requirements.txt 
+
+vim draw/secret/k.txt
+
+vim draw/settings.py
+    DEBUG = False                                   # line 30
+    ALLOWED_HOSTS = ['localhost', '127.0.0.1']      # line 32, later add the proper domain name
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+python manage.py runserver              # to test if working
